@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const LoginHeadBlock = styled.div`
+const SignUpHeadBlock = styled.div`
   display: flex;
   position: sticky;
   top: 0;
@@ -15,7 +15,7 @@ const LoginHeadBlock = styled.div`
   align-items: center;
   z-index: 1000;
 `
-const LoginHeadContainer = styled.div`
+const SignUpHeadContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 1000px;
@@ -23,7 +23,7 @@ const LoginHeadContainer = styled.div`
   align-items: center;
 `
 
-export default function LoginUpHead() {
+export default function SignUpHead() {
   const [mounted, setMounted] = useState<boolean>(false)
   useEffect(() => {
     setMounted(true)
@@ -32,17 +32,17 @@ export default function LoginUpHead() {
   return (
     <>
       {mounted && (
-        <LoginHeadBlock>
-          <LoginHeadContainer>
-            <Button sx={{ ml: 2 }} variant="contained" disabled>
-              LOGIN
+        <SignUpHeadBlock>
+          <SignUpHeadContainer>
+            <Button sx={{ ml: 2 }} variant="contained">
+              <Link href="/login">Login</Link>
             </Button>
 
-            <Button sx={{ m: 2 }} variant="contained">
-              <Link href="/signup">SignUp</Link>
+            <Button sx={{ m: 2 }} variant="contained" disabled>
+              SIGN UP
             </Button>
-          </LoginHeadContainer>
-        </LoginHeadBlock>
+          </SignUpHeadContainer>
+        </SignUpHeadBlock>
       )}
     </>
   )
