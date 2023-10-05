@@ -3,6 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useRouter } from 'next/navigation'
+import { useSession, signIn, signOut, SessionProvider } from 'next-auth/react'
+import Providers from './components/Provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

@@ -34,12 +34,14 @@ export default function SignUpBody() {
             required
             id="outlined-required"
             label="Password"
+			  type={"password"}
             sx={{ mt: 2 }}
           />
           <TextField
             required
             id="outlined-required"
             label="Password 확인"
+			  type={"password"}
             sx={{ my: 2 }}
           />
           <SignUpBtnContainer>

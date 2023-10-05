@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import SignInButton from './SignInButton'
 
 export default function Home() {
   return (
-    <>
-      <h2>Welcome</h2>
-      Hello WEB
-    </>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1 className="text-4xl font-semibold">NextAuth Tutorial</h1>
+      <SignInButton />
+    </main>
   )
 }
